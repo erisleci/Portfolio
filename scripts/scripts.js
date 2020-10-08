@@ -21,10 +21,20 @@ appProjectShow.addEventListener("click", () => {
 
 closeButton[0].addEventListener("click", () => {
     popUpSection.style.display = "none";
-})
+});
 closeButton[1].addEventListener("click", () => {
     popUpSection.style.display = "none";
-})
+});
 
+$('#error-message').delay(3000).fadeOut('slow');
+$(window).on('unload', function () {
+    $(window).scrollTop(0);
+});
+
+window.onunload = function () { window.scrollTo(0, 0); }
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
 
 
